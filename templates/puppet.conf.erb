@@ -7,6 +7,6 @@ factpath=$vardir/lib/facter
 templatedir=$confdir/templates
 prerun_command=/etc/puppet/etckeeper-commit-pre
 postrun_command=/etc/puppet/etckeeper-commit-post
-pluginsync = <%= scope.lookupvar("puppetagent::config::pluginsync") %>
+pluginsync = <%= scope.lookupvar("puppetagent::config::plugin_sync") %>
 listen = <%= scope.lookupvar("puppetagent::config::listen") %>
 server = <%= scope.lookupvar("puppetagent::config::puppet_master") %>
