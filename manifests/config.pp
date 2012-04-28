@@ -3,6 +3,6 @@ class puppetagent::config (
 	$plugin_sync = $puppetagent::params::plugin_sync
 	) inherits puppetagent::params {
 	file {$puppet_conf_file:
-		template => 'puppet.conf.erb'
+		content => template("${module_name}/puppet.conf.erb"),
 	}
 }
