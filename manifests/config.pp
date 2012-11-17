@@ -7,4 +7,10 @@ class puppetagent::config (
 	file {$puppet_conf_file:
 		content => template("${module_name}/puppet.conf.erb"),
 	}
+	if ($::lsbdistid == "Ubuntu")
+	{
+		file {"/etc/default/puppet":
+			content => template("${module_name}/debian_etc_default_puppet.erb")
+		}
+	}
 }
