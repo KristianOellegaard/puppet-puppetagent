@@ -10,3 +10,8 @@ postrun_command=/etc/puppet/etckeeper-commit-post
 pluginsync = <%= scope.lookupvar("puppetagent::config::plugin_sync") %>
 listen = <%= scope.lookupvar("puppetagent::config::listen") %>
 server = <%= scope.lookupvar("puppetagent::config::puppet_master") %>
+
+<% if scope.lookupvar("puppetagent::config::environment") %>
+[agent]
+environment = <%= scope.lookupvar("puppetagent::config::environment") %>
+<% end %>
